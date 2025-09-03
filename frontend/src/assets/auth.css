@@ -1,0 +1,78 @@
+body {
+  background: #f4f6f8;
+  font-family: Arial, sans-serif;
+}
+
+.form-container {
+  width: 400px;
+  margin: 80px auto;
+  padding: 40px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px; 
+}
+
+.form-container h2 {
+  margin-bottom: 10px;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-container input,
+.form-container button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.form-container input {
+  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+
+.form-container input[type="email"] {
+  margin-bottom: 20px; 
+}
+
+
+.form-container button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form-container button:hover {
+  background: #0056b3;
+}
+
+.form-container p {
+  margin-top: 10px; 
+}
+
+.form-container a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.form-container a:hover {
+  text-decoration: underline;
+}
