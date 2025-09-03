@@ -11,9 +11,11 @@ export default function Tasks() {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
 
+  const API_URL = process.env.REACT_APP_API_URL;
+
   const fetchTasks = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/tasks", {
+      const res = await axios.get(`${API_URL}/api/tasks`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTasks(res.data);
@@ -26,7 +28,7 @@ export default function Tasks() {
     if (!title.trim()) return;
     try {
       await axios.post(
-        "http://localhost:5000/api/tasks",
+        `${API_URL}/api/tasks`,
         { title },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -40,7 +42,7 @@ export default function Tasks() {
   const toggleStatus = async (task) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/tasks/${task._id}`,
+        `${API_URL}/api/tasks/${task._id}`,
         { status: task.status === "pending" ? "completed" : "pending" },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -52,7 +54,7 @@ export default function Tasks() {
 
   const deleteTask = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/tasks/${id}`, {
+      await axios.delete(`${API_URL}/api/tasks/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchTasks();
@@ -70,7 +72,7 @@ export default function Tasks() {
     if (!editTitle.trim()) return;
     try {
       await axios.put(
-        `http://localhost:5000/api/tasks/${id}`,
+        `${API_URL}/api/tasks/${id}`,
         { title: editTitle },
         { headers: { Authorization: `Bearer ${token}` } }
       );
